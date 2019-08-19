@@ -35,7 +35,7 @@ class Network(nn.Module):
             layers.PreActivation2d(32, 32, kernel_size=3, padding=1),
         )
 
-        # don't need upsampling here because it will be done im `merge_branches`
+        # don't need upsampling here because it will be done in `merge_branches`
         upsample = nn.Sequential  # same as nn.Identity, but supported by older versions
         downsample = partial(nn.MaxPool2d, kernel_size=2)
 

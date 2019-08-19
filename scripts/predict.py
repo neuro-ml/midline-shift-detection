@@ -1,6 +1,7 @@
 from pathlib import Path
 from argparse import ArgumentParser
 
+import numpy as np
 from tqdm import tqdm
 import nibabel
 import torch
@@ -50,10 +51,9 @@ for output_file, input_image in bar:
     bar.set_description(input_image.name)
 
     contours = predict(nibabel.load(str(input_image)))
-
     # filter out `undefined` points
-    # contours = [
-    #     [[y, x] for y, x in enumerate(contour) if not np.isnan(x)] for contour in contours
-    # ]
+    contours = [
+        [[y, x] for y, x in enumerate(contour) if not np.isnan(x)] for contour in contours
+    ]
 
     save_json(contours, output_file)

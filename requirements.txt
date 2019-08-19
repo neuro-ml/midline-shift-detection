@@ -1,4 +1,6 @@
+tqdm
 scikit-image
 numpy
-torch
+torch>=1.0.0
 nibabel
+git+https://github.com/neuro-ml/deep_pipe@develop
