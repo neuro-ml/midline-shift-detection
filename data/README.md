@@ -10,7 +10,7 @@ If a given slice doesn't have an annotation - the curve is an empty list.
 
 E.g.:
 
-```json
+```
 [
   [ // first annotation
     [], // empty slice
